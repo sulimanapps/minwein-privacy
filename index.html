@@ -1,17 +1,67 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MinWein - Privacy Policy</title>
+    <title>من وين - سياسة الخصوصية | MinWein - Privacy Policy</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.8; color: #333; }
         h1 { color: #0d9488; }
         h2 { color: #115e59; margin-top: 2em; }
         .updated { color: #666; font-size: 0.9em; }
+        .lang-switch { text-align: center; margin: 20px 0; }
+        .lang-switch a { padding: 8px 20px; margin: 0 8px; border-radius: 8px; text-decoration: none; color: #fff; background: #0d9488; font-weight: bold; }
+        .lang-switch a.inactive { background: #ccc; color: #555; }
+        .section { display: none; }
+        .section.active { display: block; }
+        hr { border: none; border-top: 1px solid #e0e0e0; margin: 3em 0; }
     </style>
 </head>
 <body>
+
+<div class="lang-switch">
+    <a href="#" onclick="showLang('ar')" id="btn-ar">العربية</a>
+    <a href="#" onclick="showLang('en')" id="btn-en" class="inactive">English</a>
+</div>
+
+<!-- Arabic -->
+<div id="ar" class="section active" dir="rtl" lang="ar">
+    <h1>سياسة الخصوصية - من وين</h1>
+    <p class="updated">آخر تحديث: 25 مارس 2026</p>
+
+    <h2>نظرة عامة</h2>
+    <p>تطبيق "من وين" هو ماسح باركود يعرض بلد تسجيل الشركة المرتبط بالمنتج. نحن ملتزمون بحماية خصوصيتك.</p>
+
+    <h2>المعلومات التي نجمعها</h2>
+    <p><strong>نحن لا نجمع أو نخزّن أو ننقل أي بيانات شخصية.</strong></p>
+    <ul>
+        <li><strong>الكاميرا:</strong> يستخدم التطبيق كاميرا جهازك فقط لمسح الباركود. تتم معالجة بيانات الكاميرا بالكامل على جهازك ولا يتم إرسالها إلى أي خادم.</li>
+        <li><strong>سجل المسح:</strong> يتم تخزين سجل المسح محلياً على جهازك فقط. لا يتم رفعه أو مشاركته أو الوصول إليه من قبلنا أو أي طرف ثالث.</li>
+        <li><strong>تفضيل اللغة:</strong> يتم تخزين اللغة المختارة محلياً على جهازك فقط.</li>
+    </ul>
+
+    <h2>تخزين البيانات</h2>
+    <p>جميع البيانات (سجل المسح، تفضيل اللغة) مخزّنة محلياً على جهازك. ليس لدينا أي وصول إلى هذه البيانات. حذف التطبيق سيؤدي إلى حذف جميع البيانات المخزّنة نهائياً.</p>
+
+    <h2>خدمات الطرف الثالث</h2>
+    <p>التطبيق لا يستخدم أي خدمات تحليلات أو إعلانات أو تتبع من أطراف ثالثة. لا تتم مشاركة أي بيانات مع أي طرف ثالث.</p>
+
+    <h2>إذن الكاميرا</h2>
+    <p>يتطلب التطبيق صلاحية الكاميرا لمسح الباركود. يُستخدم هذا الإذن حصرياً لمسح الباركود. لا يتم تخزين أو إرسال أو معالجة أي صور أو فيديو خارج نطاق كشف الباركود على جهازك.</p>
+
+    <h2>خصوصية الأطفال</h2>
+    <p>التطبيق لا يجمع أي معلومات شخصية من أي شخص، بما في ذلك الأطفال دون سن 13 عاماً.</p>
+
+    <h2>التغييرات على هذه السياسة</h2>
+    <p>قد نقوم بتحديث سياسة الخصوصية من وقت لآخر. ستنعكس أي تغييرات على هذه الصفحة مع تاريخ محدّث.</p>
+
+    <h2>تواصل معنا</h2>
+    <p>إذا كان لديك أي أسئلة حول سياسة الخصوصية، تواصل معنا عبر:</p>
+    <p>البريد الإلكتروني: <strong>awaya.app@gmail.com</strong></p>
+</div>
+
+<!-- English -->
+<div id="en" class="section" dir="ltr" lang="en">
     <h1>Privacy Policy - MinWein</h1>
     <p class="updated">Last updated: March 25, 2026</p>
 
@@ -44,5 +94,18 @@
     <h2>Contact Us</h2>
     <p>If you have any questions about this Privacy Policy, please contact us at:</p>
     <p>Email: <strong>awaya.app@gmail.com</strong></p>
+</div>
+
+<script>
+function showLang(lang) {
+    document.getElementById('ar').classList.remove('active');
+    document.getElementById('en').classList.remove('active');
+    document.getElementById(lang).classList.add('active');
+    document.getElementById('btn-ar').classList.toggle('inactive', lang !== 'ar');
+    document.getElementById('btn-en').classList.toggle('inactive', lang !== 'en');
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+}
+</script>
+
 </body>
 </html>
